@@ -1,0 +1,18 @@
+.chat-side
+  .side-header
+    .side-box
+      %h3.side-header__side-username
+        ユーザー名
+      %ul.side-header__side-menu
+        %li.side-header__icon
+          = link_to '#' do  
+            = icon('far', 'edit')
+        %li.side-header__icon
+          = link_to '#' do  
+            = icon('fas', 'cog')
+  .side-group
+    .group-list
+      .group-name
+        techcamp
+      .group-message
+        まだメッセージがありません
