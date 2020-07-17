@@ -2,17 +2,17 @@
   .side-header
     .side-box
       %h3.side-header__side-username
-        ユーザー名
+        = current_user.name
       %ul.side-header__side-menu
         %li.side-header__icon
           = link_to '#' do  
             = icon('far', 'edit')
         %li.side-header__icon
-          = link_to '#' do  
+          = link_to edit_user_path(current_user) do
             = icon('fas', 'cog')
   .side-group
     .group-list
       .group-name
-        techcamp
+        グループ名
       .group-message
-        まだメッセージがありません
+        最新のメッセージ
