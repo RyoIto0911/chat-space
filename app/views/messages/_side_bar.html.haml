@@ -5,14 +5,16 @@
         = current_user.name
       %ul.side-header__side-menu
         %li.side-header__icon
-          = link_to '#' do  
+          = link_to new_group_path do 
             = icon('far', 'edit')
         %li.side-header__icon
           = link_to edit_user_path(current_user) do
             = icon('fas', 'cog')
   .side-group
-    .group-list
-      .group-name
-        グループ名
-      .group-message
-        最新のメッセージ
+    - current_user.groups.each do |group|
+      .group-list
+        = link_to '#' do
+          .group-name
+            = group.name
+          .group-message
+            メッセージはまだありません
