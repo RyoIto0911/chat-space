@@ -1,7 +1,6 @@
 * {
   box-sizing: border-box;
 }
-
 .wrapper{
   display: flex;
 }
@@ -45,7 +44,8 @@
     background-color: #2f3e51;
     overflow: scroll;
     padding: 0 20px;
-    overflow: hidden;
+
+
     .group-list{
       padding: 20px 0 40px;
       a{
@@ -102,9 +102,8 @@
     background-color: #fafafa;
     padding: 35px 40px 0;
     overflow: scroll;
-    overflow: hidden;
     .message{
-      margin-bottom: 46px;
+      margin-bottom: 10px;
       .message-box{
         display: flex;
         .message-username{
@@ -169,3 +168,4 @@
     }
   }
 }
+
