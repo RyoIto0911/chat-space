@@ -1,28 +1,21 @@
 .chat-main
   .main-header
     .group-name
-      test
+      = @group.name
       %ul.member-list
         Member: 
         %li.member-name
-          ユーザー名
-    = link_to '#', class: "main-editbtn" do
+          - @group.users.each do |user|
+            = user.name
+    = link_to edit_group_path(@group), class: "main-editbtn" do
       Edit
   .main-message
-    .message
-      .message-box
-        .massage-username
-          ユーザー名
-        .message-date
-          2020/7/16 15:54
-      .message-log
-        %p.message-content
-          こんにちは
+    = render @messages
   .main-form
-    %form.form
+    = form_with model: [@group, @message], html: {class: "form"}, local: true do |f|
       .form-content
-        %input.form-input-content{type: "text", placeholder: 'type a message'}
-        %label.form-input-image
+        = f.text_field :content, class: 'form-input-content', placeholder: 'type a message'
+        = f.label :image, class: 'form-input-image' do
           = icon('far', 'image', class: 'form-icon')
-          %input.hidden{type: 'file'}
-      %input.form-submit{type: 'submit', value: 'Send'}
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'form-submit'
