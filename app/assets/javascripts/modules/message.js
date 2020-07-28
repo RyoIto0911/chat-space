@@ -11,7 +11,6 @@ $(function(){
               ${message.created_at}
             </div>
           </div>
-          <div class="message-box">
             <p class="message-log">
               ${message.content}
             </p>
